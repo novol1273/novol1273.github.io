@@ -32,7 +32,7 @@ const Sidebar = () => {
           </Photo>
         </PhotoWrapper>
         <NameContainer>
-          <Name>Evgenii Kolesnik</Name>
+          <Name>13Evgenii Kolesnik</Name>
           <Position>Frontend Developer</Position>
         </NameContainer>
       </UserContainer>
