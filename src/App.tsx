@@ -13,6 +13,7 @@ function App() {
   return (
     <ThemeProvider>
       <AppRoot>
+        1
         <Sidebar />
         <Content>
           <About />
