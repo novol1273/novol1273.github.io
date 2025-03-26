@@ -67,6 +67,7 @@ const Image = styled.img`
 const Name = styled.p`
   font-size: 12px;
   font-weight: 500;
+  cursor: default;
   ${transition("font-weight")};
 `;
 

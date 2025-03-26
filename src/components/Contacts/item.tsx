@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { type FC } from "react";
+import { LAYOUT_WIDTH } from "../../constants.ts";
 import copyToClipboard from "../../utils/copy-to-clipboard.tsx";
 import { IContactsItem } from "./types.ts";
 
@@ -68,6 +69,10 @@ const Header = styled.div`
   gap: 4px;
   align-items: center;
   margin-bottom: 2px;
+
+  @media (max-width: ${LAYOUT_WIDTH.MD}) {
+    justify-content: end;
+  }
 `;
 
 const Label = styled.p`
@@ -78,6 +83,12 @@ const Label = styled.p`
 
 const Value = styled.a`
   font-size: 14px;
+
+  @media (max-width: ${LAYOUT_WIDTH.MD}) {
+    margin-left: auto;
+    text-align: right;
+    display: block;
+  }
 `;
 
 export default ContactItem;

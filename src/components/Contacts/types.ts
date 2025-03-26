@@ -6,4 +6,5 @@ export interface IContactsItem {
 
 export interface IContactsProps {
   list: IContactsItem[];
+  className?: string;
 }

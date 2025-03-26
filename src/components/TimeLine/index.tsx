@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { FC } from "react";
+import { LAYOUT_WIDTH } from "../../constants.ts";
 import routes from "../../utils/routes.ts";
 import { transition } from "../../utils/transition-styled.ts";
 import { ITimeLineItem } from "./types.ts";
@@ -9,14 +10,18 @@ const TimeLineItem: FC<{ item: ITimeLineItem; lastItem?: boolean }> = ({
   item: { dateStart, dateEnd, title, subtitle, description, id },
   lastItem,
 }) => {
+  const DateContainer = (
+    <Dates about="dates">
+      {dateStart.format("MMM YYYY")} -{" "}
+      {dateEnd?.format("MMM YYYY") || "Present"}
+    </Dates>
+  );
   return (
     <RootItem onClick={() => location.assign(routes.projects[id])}>
-      <Dates about="dates">
-        {dateStart.format("MMM YYYY")} -{" "}
-        {dateEnd?.format("MMM YYYY") || "Present"}
-      </Dates>
+      {DateContainer}
       <Line about="line" hideLine={lastItem} />
       <div>
+        <DateMobile>{DateContainer}</DateMobile>
         <Title about="title">{subtitle}</Title>
         <Subtitle>{title}</Subtitle>
         <Desc>{description}</Desc>
@@ -44,6 +49,12 @@ const RootItem = styled.div`
       color: ${(p) => p.theme.colorPrimary};
     }
   }
+
+  ${transition("grid-template-columns")};
+
+  @media (max-width: ${LAYOUT_WIDTH.SM}) {
+    grid-template-columns: 0 14px auto;
+  }
 `;
 
 interface ITimeLine {
@@ -64,6 +75,17 @@ const TimeLine: FC<ITimeLine> = ({ items }) => {
   );
 };
 
+const DateMobile = styled.div`
+  height: 0;
+  overflow: hidden;
+
+  ${transition(["width", "height"])};
+
+  @media (max-width: ${LAYOUT_WIDTH.SM}) {
+    height: 16px;
+  }
+`;
+
 const Root = styled.div`
   display: flex;
   flex-direction: column;
@@ -74,8 +96,8 @@ const Root = styled.div`
 const Line = styled("div")<{ hideLine?: boolean }>`
   position: relative;
   width: 1px;
-  height: 113%;
-  background-color: ${(p) => p.theme.colorText}80;
+  height: 134%;
+  background-color: ${(p) => p.theme.colorGray};
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -110,6 +132,8 @@ const Line = styled("div")<{ hideLine?: boolean }>`
 
 const Dates = styled.p`
   font-size: 0.8em;
+  overflow: hidden;
+  white-space: nowrap;
 `;
 
 const Desc = styled.p``;

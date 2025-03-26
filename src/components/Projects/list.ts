@@ -4,14 +4,14 @@ import { TimeLineId } from "../TimeLine/types";
 const workplaceItems = [
   {
     dateStart: dayjs("2023-06"),
-    title: "Frontend Engineer",
+    title: "Frontend Developer",
     id: "treenity" as TimeLineId,
     subtitle: "Treenity",
     description: "Онлайн-конструктор сайтов",
   },
   {
     dateStart: dayjs("2023-02"),
-    title: "Frontend Engineer",
+    title: "Frontend Developer",
     id: "kvarum" as TimeLineId,
     subtitle: "Kvarum",
     description:
@@ -20,7 +20,7 @@ const workplaceItems = [
   {
     dateStart: dayjs("2023-01"),
     dateEnd: dayjs("2023-06"),
-    title: "Frontend Engineer",
+    title: "Frontend Developer",
     id: "kortros" as TimeLineId,
     subtitle: "Kortros",
     description: "Корпоративный сайт девелоперской компании КОРТРОС",
@@ -28,7 +28,7 @@ const workplaceItems = [
   {
     dateStart: dayjs("2022-10"),
     dateEnd: dayjs("2023-01"),
-    title: "Frontend Engineer",
+    title: "Frontend Developer",
     id: "darwin" as TimeLineId,
     subtitle: "Darwin",
     description: "Сайт финансовой организации",
@@ -36,7 +36,7 @@ const workplaceItems = [
   {
     dateStart: dayjs("2022-02"),
     dateEnd: dayjs("2022-10"),
-    title: "Frontend Engineer",
+    title: "Frontend Developer",
     id: "cryptoFairies" as TimeLineId,
     subtitle: "Crypto fairies",
     description: "Сайт финансовой организации",
@@ -44,7 +44,7 @@ const workplaceItems = [
   {
     dateStart: dayjs("2021-08"),
     dateEnd: dayjs("2022-02"),
-    title: "Frontend Engineer",
+    title: "Frontend Developer",
     id: "jetup" as TimeLineId,
     subtitle: "Jetup",
     description: "Сайт финансовой организации",
@@ -52,7 +52,7 @@ const workplaceItems = [
   {
     dateStart: dayjs("2021-03"),
     dateEnd: dayjs("2021-08"),
-    title: "Frontend Engineer",
+    title: "Frontend Developer",
     id: "trustCar" as TimeLineId,
     subtitle: "Trust Car",
     description: "Сервис аренды автомобилей",
@@ -60,7 +60,7 @@ const workplaceItems = [
   {
     dateStart: dayjs("2019-09"),
     dateEnd: dayjs("2021-03"),
-    title: "Frontend Engineer",
+    title: "Frontend Developer",
     id: "izoneum" as TimeLineId,
     subtitle: "Izoneum",
     description: "Сайт финансовой организации",
