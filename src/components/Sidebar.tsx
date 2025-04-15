@@ -28,11 +28,11 @@ const Sidebar = () => {
         <PhotoWrapper>
           <ThemeSwitch />
           <Photo>
-            <img src="/image/photo.JPG" alt="photo image" />
+            <img src="/image/photo.jpg" alt="photo image" />
           </Photo>
         </PhotoWrapper>
         <NameContainer>
-          <Name>13Evgenii Kolesnik</Name>
+          <Name>Evgenii Kolesnik</Name>
           <Position>Frontend Developer</Position>
         </NameContainer>
       </UserContainer>
