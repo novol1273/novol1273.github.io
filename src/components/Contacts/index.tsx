@@ -18,6 +18,7 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6px;
+  width: 100%;
 
   @media (max-width: ${LAYOUT_WIDTH.MD}) {
     margin-left: auto;

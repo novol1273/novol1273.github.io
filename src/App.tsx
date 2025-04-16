@@ -1,30 +1,32 @@
 import styled from "@emotion/styled";
-import About from "./components/About";
-import Links from "./components/Links";
-import Projects from "./components/Projects";
-import Recommendations from "./components/Recommendations";
-import Sidebar from "./components/Sidebar.tsx";
-import Skills from "./components/Skils";
-import { LAYOUT_WIDTH } from "./constants.ts";
-import { ThemeProvider } from "./theme/ThemeProvider.tsx";
-import { transition } from "./utils/transition-styled.ts";
+import { FC } from "react";
+import { Outlet } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import { LAYOUT_WIDTH } from "./constants";
+import { ThemeProvider } from "./theme/ThemeProvider";
+import { transition } from "./utils/transition-styled";
 
-function App() {
+const App: FC = () => {
   return (
     <ThemeProvider>
       <AppRoot>
         <Sidebar />
-        <Content>
-          <About />
-          <Skills />
-          <Projects />
-          <Links />
-          <Recommendations />
-        </Content>
+        <WrapperContent>
+          <Outlet />
+        </WrapperContent>
       </AppRoot>
     </ThemeProvider>
   );
-}
+};
+
+const WrapperContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  background: ${(p) => p.theme.colorBackground};
+
+  ${transition("background")};
+`;
 
 const AppRoot = styled.div`
   max-width: 1280px;
@@ -36,15 +38,6 @@ const AppRoot = styled.div`
   @media (max-width: ${LAYOUT_WIDTH.MD}) {
     grid-template-columns: auto;
   }
-`;
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 12px 16px;
-  background: ${(p) => p.theme.colorBackground};
-
-  ${transition("background")};
 `;
 
 export default App;

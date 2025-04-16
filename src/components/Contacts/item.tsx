@@ -57,9 +57,7 @@ const ContactItem: FC<IContactItemProps> = ({ item }) => {
   );
 };
 
-const Root = styled.div`
-  width: 100%;
-`;
+const Root = styled.div``;
 
 const CopyButton = styled.div`
   color: ${(p) => p.theme.colorPrimary};

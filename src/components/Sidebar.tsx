@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { LAYOUT_WIDTH } from "../constants.ts";
 import { transition } from "../utils/transition-styled.ts";
 import Contacts from "./Contacts/index.tsx";
+import DownloadButton from "./DownloadButton.tsx";
 import ThemeSwitch from "./ThemeSwitch.tsx";
 
 const DEFAULT_CONTACTS = [
@@ -17,7 +18,7 @@ const DEFAULT_CONTACTS = [
   },
   {
     label: "Почта",
-    value: "hello@granthudison.co.uk",
+    value: "novol9183@gmail.com",
     type: "email",
   },
   {
@@ -33,22 +34,35 @@ const DEFAULT_CONTACTS = [
 const Sidebar = () => {
   return (
     <Root>
-      <UserContainer>
-        <PhotoWrapper>
-          <ThemeSwitch />
-          <Photo>
-            <img src="/image/photo.jpg" alt="photo image" />
-          </Photo>
-        </PhotoWrapper>
-        <NameContainer>
-          <Name>Evgenii Kolesnik</Name>
-          <Position>Frontend Developer</Position>
-        </NameContainer>
-      </UserContainer>
-      <Contacts list={DEFAULT_CONTACTS} />
+      <Wrapper>
+        <UserContainer>
+          <PhotoWrapper>
+            <ThemeSwitch />
+            <DownloadButton />
+            <Photo>
+              <img src="/image/photo.jpg" alt="photo image" />
+            </Photo>
+          </PhotoWrapper>
+          <NameContainer>
+            <Name>Evgenii Kolesnik</Name>
+            <Position>Frontend Developer</Position>
+          </NameContainer>
+        </UserContainer>
+        <Contacts list={DEFAULT_CONTACTS} />
+      </Wrapper>
     </Root>
   );
 };
+
+const Wrapper = styled.div`
+  position: sticky;
+  top: 12px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+`;
 
 const UserContainer = styled.div`
   display: flex;

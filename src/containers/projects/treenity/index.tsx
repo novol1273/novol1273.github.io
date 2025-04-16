@@ -1,12 +1,15 @@
 import styled from "@emotion/styled";
 import { type FC } from "react";
+import Title from "../../../components/Title";
 
-interface TreenityProps {
-  id: string;
-}
+interface ProjectProps {}
 
-const Treenity: FC<TreenityProps> = () => {
-  return <Root></Root>;
+const Treenity: FC<ProjectProps> = () => {
+  return (
+    <Root>
+      <Title>Treenity</Title>
+    </Root>
+  );
 };
 
 const Root = styled.div``;
