@@ -6,18 +6,27 @@ import ThemeSwitch from "./ThemeSwitch.tsx";
 
 const DEFAULT_CONTACTS = [
   {
-    label: "Telephone",
-    value: "+44 1632 960515",
+    label: "Телефон",
+    value: "+382 68 287 335",
     type: "tel",
   },
   {
-    label: "Email",
+    label: "Дополнительный телефон",
+    value: "+8 904 074 83 04",
+    type: "tel",
+  },
+  {
+    label: "Почта",
     value: "hello@granthudison.co.uk",
     type: "email",
   },
   {
-    label: "Website",
-    value: "www.granthudson.co.uk",
+    label: "Телеграм",
+    value: "https://t.me/n8dev",
+  },
+  {
+    label: "Linkedin",
+    value: "https://www.linkedin.com/in/novol1273/",
   },
 ];
 

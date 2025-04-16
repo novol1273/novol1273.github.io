@@ -47,12 +47,19 @@ const ContactItem: FC<IContactItemProps> = ({ item }) => {
           </svg>
         </CopyButton>
       </Header>
-      <Value href={`${getType(item.type)}${item.value}`}>{item.value}</Value>
+      <Value
+        href={`${getType(item.type)}${item.value}`}
+        target={!item.type ? "_blank" : "_self"}
+      >
+        {item.value}
+      </Value>
     </Root>
   );
 };
 
-const Root = styled.div``;
+const Root = styled.div`
+  width: 100%;
+`;
 
 const CopyButton = styled.div`
   color: ${(p) => p.theme.colorPrimary};
@@ -83,6 +90,10 @@ const Label = styled.p`
 
 const Value = styled.a`
   font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 
   @media (max-width: ${LAYOUT_WIDTH.MD}) {
     margin-left: auto;
